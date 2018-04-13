@@ -1,3 +1,5 @@
+set bg=dark
+
 highlight ColorColumn ctermbg=red
 
 highlight BadWhitespace ctermbg=red guibg=darkred
