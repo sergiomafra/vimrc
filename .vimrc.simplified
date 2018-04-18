@@ -1,14 +1,17 @@
+set bg=dark
+
 highlight ColorColumn ctermbg=red
 
 highlight BadWhitespace ctermbg=red guibg=darkred
+
+filetype plugin indent on
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
+    \ set textwidth=80 |
     \ set expandtab |
-    \ set autoindent |
     \ set fileformat=unix |
     \ set colorcolumn=81 |
 
@@ -16,5 +19,7 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
