@@ -23,6 +23,7 @@ filetype plugin indent on    " required
 set bg=dark
 
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -43,7 +44,7 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set colorcolumn=81
 
-au BufNewFile,BufRead *.html,*.css,*.js
+au BufNewFile,BufRead *.html,*.css,*.js,*.jsx,docker-compose.yml
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
