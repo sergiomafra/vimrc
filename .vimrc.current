@@ -1,6 +1,6 @@
 set nocompatible              " required
 filetype off                  " required
-set nu
+set nonu
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -11,6 +11,13 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
+
+let g:user_emmet_leader_key=','
+
+Bundle 'Valloric/YouCompleteMe'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -23,10 +30,6 @@ filetype plugin indent on    " required
 
 set bg=dark
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
-Bundle 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -45,7 +48,7 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set colorcolumn=81
 
-au BufNewFile,BufRead *.html,*.css,*.js,*.jsx,docker-compose.yml
+au BufNewFile,BufRead *.html,*.css,*.js,*.jsx,*.yml,Dockerfile,Vagrantfile
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
@@ -60,3 +63,5 @@ au BufNewFile,BufRead *.c,*.cpp
 au BufNewFile,BufRead *.py,*.pyw,*.c,*.h,*.cpp match BadWhitespace /\s\+$/
 
 set encoding=utf-8
+set hlsearch
+nnoremap <silent> <C-l> :nohl<CR><C-l>
